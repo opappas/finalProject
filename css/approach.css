@@ -1,0 +1,201 @@
+:root,
+::backdrop {
+	--color: #333;
+	--background: #fefefe;
+	--focus: #e76ba5;
+
+
+	--grid-size: 3.125rem;  
+	--grid-width: 0.05625rem;
+}
+
+::backdrop {
+	background: color-mix(in lch, var(--color), transparent 60%);
+}
+
+button,
+dialog {
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+/* dialog */
+.dialog-wrapper {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.3;
+	max-height: 50vh;
+	color: var(--color);
+	background: var(--background);
+
+	border: 0.25rem solid rgb(91, 73, 91); 
+	max-width: 31.25rem;
+	border-radius: 1.25rem; 
+	padding: 2rem;
+	position: relative;
+	z-index: 1;
+
+	box-shadow:
+		0.0625rem 0.0625rem 0 rgb(91, 73, 91),
+		0.125rem 0.125rem 0 rgb(91, 73, 91),
+		0.1875rem 0.1875rem 0 rgb(91, 73, 91),
+		0.25rem 0.25rem 0 rgb(91, 73, 91),
+		0.3125rem 0.3125rem 0 rgb(91, 73, 91);
+}
+
+dialog {
+	position: absolute;
+
+
+	margin-top: 9.375rem; 
+	top: 100%;
+
+	overflow-y: auto;
+	padding: 1.25rem; 
+
+	&,::backdrop {
+		transition: display 0.3s allow-discrete, overlay 0.3s allow-discrete;
+	}
+
+	animation: exit 0.3s forwards ease, fade-out 0.3s forwards ease;
+
+	&[open] {
+		animation: enter 0.3s ease, fade-in 0.3s forwards ease;
+		transform: none;
+	}
+
+	&::backdrop {
+		animation: fade-out 0.3s forwards ease;
+	}
+	&[open]::backdrop {
+		animation: fade-in 0.3s forwards ease;
+	}
+}
+
+.trigger-button {
+	--color: rgb(91, 73, 91);
+	--background: white;
+
+	margin-left: 3.125rem; 
+	margin-top: 1.5625rem; 
+
+	outline: none;
+	transition: transform 0.2s cubic-bezier(.3, .7, .4, 1);
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	max-width: max-content;
+	position: relative;
+
+	font-size: 1rem;
+	border-radius: 999px;
+
+	&:focus-visible {
+		outline: 0.3125rem dashed var(--focus); 
+	}
+}
+
+.trigger-button span {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	max-width: max-content;
+
+	background: var(--background);
+	color: var(--color);
+
+	border: 0.25rem solid var(--color);
+	padding: 0.6rem 1.2rem;
+	border-radius: 999px;
+
+	position: relative;
+	overflow: hidden;
+	transition: background 0.3s, color 0.3s;
+}
+
+.trigger-button:hover span {
+	background: rgb(91, 73, 91);
+	color: white;
+}
+
+.trigger-button:active span {
+	transform: none;
+}
+
+/* keyframe - animations  */
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes fade-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes enter {
+	from { translate: 0 -3rem; } 
+	to { translate: 0 0; }
+}
+
+@keyframes exit {
+	from { translate: 0 0; }
+	to { translate: 0 3rem; } 
+}
+
+
+.close-button {
+	margin-left: auto;
+	margin-bottom: 1.25rem; 
+
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	max-width: max-content;
+
+	background: var(--background);
+	color: rgb(91, 73, 91);
+	border: 0.25rem solid rgb(91, 73, 91); 
+
+	padding: 0.6rem 1.2rem;
+	position: relative;
+	overflow: hidden;
+
+	font-size: 0.8rem;
+	border-radius: 999px;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	box-shadow:
+		0.0625rem 0.0625rem 0 rgb(91, 73, 91),
+		0.125rem 0.125rem 0 rgb(91, 73, 91),
+		0.1875rem 0.1875rem 0 rgb(91, 73, 91),
+		0.25rem 0.25rem 0 rgb(91, 73, 91),
+		0.3125rem 0.3125rem 0 rgb(91, 73, 91);
+
+	transition: color 0.3s ease, background 0.3s ease;
+
+	&::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+	}
+
+	&:focus-visible {
+		outline: 0.3125rem dashed var(--focus);
+	}
+
+	&:hover {
+		color: white;
+		background: rgb(91, 73, 91);
+	}
+}
+
+[method="dialog"] {
+	display: contents;
+}

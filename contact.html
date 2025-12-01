@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="/images/cpclogo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+     <!--Navigation-->
+    <nav>
+         <a href="index.html">
+            <img id="logoNav" src="/images/cpclogo.png" alt="Logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html" class="onContact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+<a href="#main" class="skip">Skip to main content</a>
+</header>
+
+    <main id="main">
+        <h1>Contact Carrie</h1>
+
+        <p>For all prospective clients, I offer a complimentary 15 minute phone consultation to see if we are a good fit to work together.</p>
+
+        <!--Contact Form-->
+        <div class="row">
+    <div class="column">
+     <!--image <img src="/w3images/map.jpg" style="width:100%"> -->
+    </div>
+    <div class="column">
+      <form action="https://formspree.io/f/mqavwqdb" method="POST" onsubmit="return validate()">
+        <!--Name-->
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required><br>
+        <!--Phone Number-->
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phonenumber" placeholder="Your phone number.." required><br>
+        <!--Email and Confrim-->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="emailaddress" placeholder="Your email address.." pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+        <label for="confirmEmail">Confirm Email Address:</label>
+        <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm email.." required><br>
+        <!--Contact Preference-->
+        <p>How would you like to be contacted? Please select all that apply.</p><br>
+        <label for="emailCheck">Email</label>
+        <input type="checkbox" id="emailCheck" name="checkEmail" value="Email"><br>
+        <label for="phoneCheck">Phone</label>
+        <input type="checkbox" id="phoneCheck" name="checkPhone" value="Phone"><br>
+        <label for="textCheck">Text</label>
+        <input type="checkbox" id="textCheck" name="checkText" value="Text"><br>
+        <label for="messageCheck">Okay to leave a message</label>
+        <input type="checkbox" id="messageCheck" name="checkMessage" value="Message"><br>
+        <!--Birthday-->
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" required><br>
+        <!--Message-->
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" required></textarea><br>
+        <!--Submit-->
+        <input type="submit" value="Submit" onclick="validate()">
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+    </main>
+
+        <footer>
+        <section class="footerInfo">
+            <p>Carrie Pappas, MA LLP</p>
+            <p>(616) 345-3644</p>
+            <p>carrie@carriepappascounseling.com</p>
+            <!-- Professional verification provided by Psychology Today -->
+            <a href="https://www.psychologytoday.com/profile/1202821" class="sx-verified-seal"></a>
+            <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="10" data-id="1202821" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMC9wcm9maWxlLzEyMDI4MjE/Y2FsbGJhY2s9c3hjYWxsYmFjaw=="></script>
+            <!-- End Verification -->
+        </section>
+
+        <section class="address">
+            <p>655 Kenmoor Avenue Southeast</p>
+            <p>Suite 303</p>
+            <p>Grand Rapids, MI 49546</p>
+        </section>
+    </footer>
+
+     <script src="js/main.js"></script>
+    
+</body>
+</html>

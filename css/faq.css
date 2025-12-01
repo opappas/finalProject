@@ -1,0 +1,100 @@
+
+.accordion {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+
+  padding: 1.25rem;           
+  width: 100%;
+  text-align: center;
+
+  font-size: 1.1rem;        
+  border: none;
+  outline: none;
+
+  transition: background-color 0.4s ease, padding 0.3s ease;
+}
+
+
+.accordion:focus {
+  outline: 0.25rem dashed #685a6b; 
+  background-color: #ddd;
+}
+
+
+.accordion:hover {
+  background-color: #ccc;
+  padding: 1.25rem;       
+}
+
+/* inside */
+.panel {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;               
+  padding: 0 1.25rem;          
+
+  background-color: white;
+
+  max-height: 0;
+  overflow: hidden;
+
+  text-align: center;
+
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* items in q1 */
+.panel li {
+  width: 15.625rem;     
+  margin: 0 auto;
+  padding: 0.3125rem;     
+
+  list-style-position: inside;
+  text-align: left;
+}
+
+
+/* faq page */
+h1.faq {
+  padding-top: 1.25rem; 
+  padding-bottom: 1.25rem;
+  text-align: center;
+  color: #685a6b;
+  font-size: 2.5rem;
+}
+
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .accordion,
+  .panel {
+    transition: none !important;
+  }
+}
+
+
+/* responsive */
+@media (max-width: 600px) {
+
+  .accordion {
+    text-align: left;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .panel {
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .panel li {
+    width: 100%;   
+    padding: 0.25rem;
+  }
+
+  h1.faq {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+}
