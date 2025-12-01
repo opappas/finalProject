@@ -95,3 +95,22 @@ input[type="checkbox"] + label {
     position: relative; 
     width: 300px; 
 }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .input-container label,
+  .input-container input,
+  .input-container textarea {
+    transition: none;
+    transform: none;
+  }
+
+  .input-container input:focus + label,
+  .input-container textarea:focus + label,
+  .input-container input:not(:placeholder-shown) + label,
+  .input-container textarea:not(:placeholder-shown) + label {
+    top: 0;
+  }
+}
+
